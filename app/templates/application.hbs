@@ -1,8 +1,25 @@
 <h1>Chef Tracker</h1>
 <p>
-  Is your favorite chef cooking right now?
+  Is your favorite {{chefTypes}} cooking right now?
   <br>
   <br>
   Find out with <strong>Chef Tracker</strong>,
-  the hottest new chef-tracking app on the market.
+  the hottest new {{chefTypes}}-tracking app on the market.
+  <br>
+  <br>
+  We know some {{chefTypes}} are better than others, so we want to tell you
+  who's cooking at our restaurant right now. Is it your favorite {{chefTypes}}?
+  Then maybe you should visit!
 </p>
+<hr>
+{{input value=chefTypes}}
+<hr>
+<ul>
+  {{#each chefs as |chef|}}
+    {{#if chef.isCooking}}
+      <li class="available">{{chef.name}}</li>
+    {{else}}
+      <li class="not-available">{{chef.name}}</li>
+    {{/if}}
+  {{/each}}
+</ul>

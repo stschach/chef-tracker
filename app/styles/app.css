@@ -1,0 +1,6 @@
+li.available {
+  text-decoration: underline;
+}
+li.not-available {
+  color: grey;
+}
