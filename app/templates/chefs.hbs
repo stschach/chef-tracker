@@ -1,0 +1,54 @@
+<div class="flex-container">
+  <div class="flex-item">
+    <h1>Chef Tracker</h1>
+    <p>
+      Is your favorite {{chefTypes}} cooking right now?
+      <br>
+      <br>
+      Find out with <strong>Chef Tracker</strong>,
+      the hottest new {{chefTypes}}-tracking app on the market.
+    </p>
+    <hr>
+      A chef? Pah! Here, we say {{input value=chefTypes}}
+    <hr>
+      <p>{{chefsCooking.length}} of our {{totalChefs}} chefs are cooking right now!</p>
+      <p>Our {{totalChefs}} chefs teach {{totalStudents}} students.</p>
+    <ul>
+      {{#each model as |chef|}}
+        {{#if chef.isCooking}}
+          <li class="here">
+            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
+            <button {{action 'exitChef' chef}}>Exit</button>
+          </li>
+        {{else}}
+          <li class="not-here">
+            {{chef.name}}
+            <button {{action 'enterChef' chef}}>Enter</button>
+            <button {{action 'fireChef' chef}}>Fire</button>
+          </li>
+        {{/if}}
+        <div>
+          Number of students:
+          <button {{action 'removeStudent' chef}}>-</button>
+          {{chef.students}}
+          <button {{action 'addStudent' chef}}>+</button>
+        </div>
+      {{/each}}
+    </ul>
+    <hr>
+    {{input value=newChef}}
+    <button {{action 'saveChef'}}>Save</button>
+  </div>
+  <div class="flex-item">
+    {{outlet}}
+  </div>
+</div>
+
+<!--
+  Helpful html tips:
+  - 'div' creates a new element on a new line.
+  - 'span' creates a new element on the same line.
+  - including 'chef' in the action helper so the action knows which chef
+    to work with in the model that is looping through all of them.
+  - a 'class' is simply an id to tie html elements to certain css styling
+-->

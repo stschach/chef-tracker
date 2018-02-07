@@ -1,6 +1,14 @@
-li.available {
+li.here {
   text-decoration: underline;
 }
-li.not-available {
+li.not-here {
   color: grey;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+.flex-item {
+  padding: 10px;
+  border-left: 3px solid blue;
 }
