@@ -1,8 +1,11 @@
-li.here {
-  text-decoration: underline;
+.here {
+  text-decoration: none;
 }
-li.not-here {
+.not-here {
   color: grey;
+}
+.not-here a {
+  color: #BBB;
 }
 .flex-container {
   display: flex;
@@ -10,5 +13,46 @@ li.not-here {
 }
 .flex-item {
   padding: 10px;
-  border-left: 3px solid blue;
+}
+.medium-text-area {
+  height: 50px;
+  width: 300px;
+}
+.big-button {
+  height: 100px;
+  width: 300px;
+  font-size: 3em;
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  margin: 20px;
+}
+.button-row a {
+  text-decoration: none;
+}
+.chef-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 250px;
+  padding: 4px;
+  margin: 5px;
+}
+.chef-card .title-bar {
+  font-size: 1.3em;
+}
+.chef-card .bio {
+  padding: 8px;
+  min-height: 70px;
+}
+.chef-card .students {
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  max-width: 225px;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
 }

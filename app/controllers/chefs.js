@@ -1,6 +1,6 @@
 /*
   NOTE:
-  This file MUST match a route and template file in order to work properly with
+  This filename MUST match a route and template file in order to work properly with
   that corresponding route and template!
 */
 
@@ -39,11 +39,13 @@ export default Controller.extend({
       chef.save();
     },
     saveChef() {
-      this.store.createRecord('chefs', {
-        isCooking: false,
-        name: this.get('newChef')
-      }).save()
-      this.set('newChef', '') // 'newChef' attr to set, '' what it is set to
+      if(this.get('newChef')){
+        this.store.createRecord('chefs', {
+          isCooking: false,
+          name: this.get('newChef')
+        }).save()
+        this.set('newChef', '') // 'newChef' attr to set, '' what it is set to
+      }
     },
     fireChef(chef) {
       chef.destroyRecord();

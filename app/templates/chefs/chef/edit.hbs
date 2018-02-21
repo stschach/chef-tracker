@@ -1,0 +1,14 @@
+<br>
+<p>
+  Bio:
+  {{textarea value=model.bio class="medium-text-area"}}
+</p>
+<p>
+  {{input type="checkbox" checked=model.hasDegree}}
+  Has a Culinary Degree?
+</p>
+  {{#if model.hasDegree}}
+    Culinary Institution Attended: {{input value=model.schoolAttended}}
+  {{/if}}
+<br><br>
+<button {{action 'save' model}}>Done</button>

@@ -11,33 +11,19 @@
     <hr>
       A chef? Pah! Here, we say {{input value=chefTypes}}
     <hr>
-      <p>{{chefsCooking.length}} of our {{totalChefs}} chefs are cooking right now!</p>
+      <p>
+        {{chefsCooking.length}} of our
+        {{totalChefs}} chefs are cooking right now!
+      </p>
       <p>Our {{totalChefs}} chefs teach {{totalStudents}} students.</p>
     <ul>
       {{#each model as |chef|}}
-        {{#if chef.isCooking}}
-          <li class="here">
-            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
-            <button {{action 'exitChef' chef}}>Exit</button>
-          </li>
-        {{else}}
-          <li class="not-here">
-            {{chef.name}}
-            <button {{action 'enterChef' chef}}>Enter</button>
-            <button {{action 'fireChef' chef}}>Fire</button>
-          </li>
-        {{/if}}
-        <div>
-          Number of students:
-          <button {{action 'removeStudent' chef}}>-</button>
-          {{chef.students}}
-          <button {{action 'addStudent' chef}}>+</button>
-        </div>
+        {{chef-card chef=chef}}
       {{/each}}
     </ul>
     <hr>
     {{input value=newChef}}
-    <button {{action 'saveChef'}}>Save</button>
+    <button {{action 'saveChef'}}>Hire Chef</button>
   </div>
   <div class="flex-item">
     {{outlet}}
