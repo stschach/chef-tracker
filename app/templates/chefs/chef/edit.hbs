@@ -10,5 +10,7 @@
   {{#if model.hasDegree}}
     Culinary Institution Attended: {{input value=model.schoolAttended}}
   {{/if}}
-<br><br>
+<p>Image URL: {{input value=model.imageUrl}}</p>
+{{icon-image model.imageUrl}}
+<br>
 <button {{action 'save' model}}>Done</button>

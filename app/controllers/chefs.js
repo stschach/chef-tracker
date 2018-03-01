@@ -60,6 +60,9 @@ export default Controller.extend({
     addStudent(chef) {
       chef.incrementProperty('students'); // convenience method awesomeness
       chef.save();
+    },
+    togglePresence(chef) {
+      chef.toggleProperty('isCooking');
     }
   }
 });

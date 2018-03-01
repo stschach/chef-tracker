@@ -1,6 +1,9 @@
-<h1>This Chef's name is {{model.name}}</h1>
-<p>{{model.bio}}</p>
-<button {{action 'fireChef' model}}>Fire</button>
-<br><br>
-{{link-to 'Edit this chef' 'chefs.chef.edit' model.id}}
-{{outlet}}
+<div class="chef-show">
+  <h1>{{model.name}}</h1>
+  <p>{{model.bio}}</p>
+  {{icon-image model.imageUrl}}<br>
+  <button {{action 'fireChef' model}}>Fire</button>
+  <br><br>
+  {{link-to 'Edit this chef' 'chefs.chef.edit' model.id}}
+  {{outlet}}
+</div>

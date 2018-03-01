@@ -18,7 +18,34 @@
       <p>Our {{totalChefs}} chefs teach {{totalStudents}} students.</p>
     <ul>
       {{#each model as |chef|}}
-        {{chef-card chef=chef}}
+        {{#collapsible-component as |isOpen component|}}
+          <div class="chef-card {{if chef.isCooking '' 'not-here'}}">
+            <div {{action 'toggleOpen' target=component}} class="title-bar">{{chef.name}}
+            <span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
+            {{#if isOpen}}
+              {{icon-image chef.imageUrl left=true}}
+              <div class="bio">{{chef.bio}}</div>
+              <div class="students">
+                Number of students:
+                <button {{action 'removeStudent' chef}}>-</button>
+                {{chef.students}}
+                <button {{action 'addStudent' chef}}>+</button>
+              </div>
+              <br>
+              <div class="button-row">
+                {{#link-to 'chefs.chef' chef.id}}
+                  <button>Bio</button>
+                {{/link-to}}
+                {{#link-to 'chefs.chef.edit' chef.id}}
+                  <button>Edit</button>
+                {{/link-to}}
+                <button {{action 'togglePresence' chef}}>
+                  {{if chef.isCooking 'Exit' 'Enter'}}
+                </button>
+              </div>
+            {{/if}}
+          </div>
+        {{/collapsible-component}}
       {{/each}}
     </ul>
     <hr>
@@ -37,4 +64,5 @@
   - including 'chef' in the action helper so the action knows which chef
     to work with in the model that is looping through all of them.
   - a 'class' is simply an id to tie html elements to certain css styling
+  - {{!-- this is a handlebars comment --}}
 -->

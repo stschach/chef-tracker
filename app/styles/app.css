@@ -42,7 +42,8 @@
 }
 .chef-card .bio {
   padding: 8px;
-  min-height: 70px;
+  min-height: 80px;
+  margin-left: 80px;
 }
 .chef-card .students {
   padding: 8px;
@@ -55,4 +56,20 @@
 }
 .pull-left {
   float: left;
+}
+.chef-card .img-icon {
+  max-width: 64px;
+  max-height: 64px;
+  padding: 5px;
+}
+.chef-show .img-icon {
+  max-width: 256px;
+  max-height: 256px;
+  padding: 5px;
+}
+.email-info {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
 }

@@ -1,6 +1,7 @@
 <div class="chef-card {{if chef.isCooking '' 'not-here'}}">
   <div {{action 'toggleOpen'}} class="title-bar">{{chef.name}} <span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
   {{#if isOpen}}
+    {{icon-image chef.imageUrl left=true}}
     <div class="bio">{{chef.bio}}</div>
     <div class="students">
       Number of students:
