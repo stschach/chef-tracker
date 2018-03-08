@@ -1,0 +1,10 @@
+<h1>{{model.name}}</h1>
+<p>
+  This fine establishment is staffed by the following culinary artists:
+  {{#each model.chefs as |chef|}}
+    <li>{{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}</li>
+  {{/each}}
+</p>
+{{#link-to 'restaurants.restaurant.edit' model.id}}
+  <button>Edit</button>
+{{/link-to}}

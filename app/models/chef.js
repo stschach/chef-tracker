@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
@@ -7,5 +8,6 @@ export default DS.Model.extend({
   bio: DS.attr('string'),
   hasDegree: DS.attr('boolean'),
   schoolAttended: DS.attr('string'),
-  imageUrl: DS.attr('string')
+  imageUrl: DS.attr('string'),
+  restaurant: DS.belongsTo()
 });

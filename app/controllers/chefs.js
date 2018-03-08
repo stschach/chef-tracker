@@ -63,6 +63,7 @@ export default Controller.extend({
     },
     togglePresence(chef) {
       chef.toggleProperty('isCooking');
+      chef.save();
     }
   }
 });

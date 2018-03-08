@@ -30,10 +30,10 @@
 .button-row a {
   text-decoration: none;
 }
-.chef-card {
+.chef-card, .restaurant-item {
   border: 1px solid black;
   border-radius: 5px;
-  max-width: 250px;
+  width: 250px;
   padding: 4px;
   margin: 5px;
 }

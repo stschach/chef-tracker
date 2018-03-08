@@ -1,6 +1,9 @@
 <div class="chef-show">
   <h1>{{model.name}}</h1>
   <p>{{model.bio}}</p>
+  <p>
+    Chef {{model.name}} currently cooks at {{model.restaurant.name}}.
+  </p>
   {{icon-image model.imageUrl}}<br>
   <button {{action 'fireChef' model}}>Fire</button>
   <br><br>
