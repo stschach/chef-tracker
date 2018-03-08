@@ -38,11 +38,8 @@
                 {{#link-to 'chefs.chef' chef.id}}
                   <button>Bio</button>
                 {{/link-to}}
-                {{#link-to 'chefs.chef.edit' chef.id}}
-                  <button>Edit</button>
-                {{/link-to}}
                 <button {{action 'togglePresence' chef}}>
-                  {{if chef.isCooking 'Exit' 'Enter'}}
+                  {{if chef.isCooking 'Vacation' 'Enter'}}
                 </button>
               </div>
             {{/if}}

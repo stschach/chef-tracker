@@ -1,16 +1,25 @@
-<br>
 <p>
   Bio:
-  {{textarea value=model.bio class="medium-text-area"}}
+  {{textarea value=model.chef.bio class="medium-text-area"}}
 </p>
 <p>
-  {{input type="checkbox" checked=model.hasDegree}}
+  {{input type="checkbox" checked=model.chef.hasDegree}}
   Has a Culinary Degree?
 </p>
-  {{#if model.hasDegree}}
-    Culinary Institution Attended: {{input value=model.schoolAttended}}
+  {{#if model.chef.hasDegree}}
+    Culinary Institution Attended: {{input value=model.chef.schoolAttended}}
   {{/if}}
-<p>Image URL: {{input value=model.imageUrl}}</p>
-{{icon-image model.imageUrl}}
+<p>
+  Restaurant:
+  {{#x-select value=model.chef.restaurant action=(action 'selectRestaurant') as |xs|}}
+    {{#each model.restaurants as |restaurant|}}
+      {{#xs.option value=restaurant}}{{restaurant.name}}{{/xs.option}}
+    {{/each}}
+  {{/x-select}}
+</p>
+<p>Image URL: {{input value=model.chef.imageUrl}}</p>
+{{icon-image model.chef.imageUrl}}
 <br>
-<button {{action 'save' model}}>Done</button>
+<button {{action 'save' model}} class="pull-left">Done</button>
+<br /><br />
+<button {{action 'fireChef' model}} class="pull-right">Fire</button>

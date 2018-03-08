@@ -54,8 +54,16 @@
 .pull-right {
   float: right;
 }
+button.pull-right {
+  float: right;
+  background-color: red;
+}
 .pull-left {
   float: left;
+}
+button.pull-left {
+  float: left;
+  background-color: green;
 }
 .chef-card .img-icon {
   max-width: 64px;
@@ -63,6 +71,11 @@
   padding: 5px;
 }
 .chef-show .img-icon {
+  max-width: 256px;
+  max-height: 256px;
+  padding: 5px;
+}
+.img-icon {
   max-width: 256px;
   max-height: 256px;
   padding: 5px;

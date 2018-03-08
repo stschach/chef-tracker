@@ -5,8 +5,7 @@
     Chef {{model.name}} currently cooks at {{model.restaurant.name}}.
   </p>
   {{icon-image model.imageUrl}}<br>
-  <button {{action 'fireChef' model}}>Fire</button>
-  <br><br>
+  <br>
   {{link-to 'Edit this chef' 'chefs.chef.edit' model.id}}
   {{outlet}}
 </div>
